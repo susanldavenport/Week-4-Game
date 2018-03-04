@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>simple crystal game</title>
+        <link href="assets/css/reset.css" type="text/css" rel="stylesheet" />
+        <link href="assets/css/style.css" type="text/css" rel="stylesheet" /> 
+        <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Bevan|Rock+Salt" rel="stylesheet">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <div class = "container">
+            
+            <div class = "title-container">
+                <h1>Crystal Charge</h1>
+                <h2>Charge your Crystals in the Moonlight</h2>
+                <h2>Make Your Score Match The Goal!</h2>
+            </div> <!--end title-container-->
+
+            <div class = "scoring-container" id = "scoreBoard">
+                <h2>Goal:</h2>
+                <div id ="goal"></div>
+                <br>
+                <h2>Score: </h2>
+                <div id="score"></div>
+            </div> <!--end scoring-container--> 
+            
+            <div class = "gem-container" id="gem-imgs"> 
+                <img id = "pinkGem" class = "gem-img" src = "assets/images/crystal-pink.png">
+                <img id = "purpleGem" class = "gem-img" src = "assets/images/crystal-purple.png">
+                <img id = "tealGem" class = "gem-img" src = "assets/images/crystal-teal.png"> 
+                <img id = "whiteGem" class = "gem-img" src = "assets/images/crystal-white.png">
+            </div> <!--end gem-container -->
+            
+        </div> <!--end container-->
+
+        <script type='text/javascript' src="assets/javascript/game.js"></script>
+        <!-- </script> -->
+    </body>
+</html>
