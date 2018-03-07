@@ -7,6 +7,7 @@ var gems = $("#gem-imgs");
 var gameActive = true;
 
 //start game
+function game(){
 if (gameActive = true) {
     //assign random goal between 19-120 / goalNum
     goalNum = Math.floor(Math.random() * 100 + 19);
@@ -29,32 +30,34 @@ if (gameActive = true) {
         gemVal = ($(this).attr("value"));
         gemVal = parseInt(gemVal);
         console.log('Gem Value', gemVal);
-
+        
         userScore += gemVal;
         console.log('Score', userScore);
+        $('.goalUpdate').text(goalNum);
+        $('.scoreUpdate').text(userScore);
+        
 
         //if userNum = goalNum, then win
         if (userScore === goalNum) {
-            userScore++;
+            // $('.scoreUpdate').text(userScore);
             alert("You win!");
             gameActive = false;
+            resetFunction();
         }
-        
         //if userNum > goalNum, then lose
         else if (userScore > goalNum) {
             alert("You lose!!");
             gameActive = false;
+            resetFunction();
             }
         });
         
 } else {
     resetFunction();
-    console.log('Reset', resetFunction);
+    };
 };
 
-//display
-document.getElementById("goal").innerHTML = goalNum;
-document.getElementById("score").innerHTML = userScore;
+game();
 
 //reset game
 function resetFunction(){
@@ -62,7 +65,11 @@ function resetFunction(){
     userScore = 0;
     goalNum = 0;
     gemNum =[];
-    gemVal;
+    gems;
+    gems.unbind('click');
+    game();
+    $('.goalUpdate').text(goalNum);
+    $('.scoreUpdate').text(userScore);
     };
 
 
