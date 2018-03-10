@@ -40,13 +40,17 @@ if (gameActive = true) {
         //if userNum = goalNum, then win
         if (userScore === goalNum) {
             // $('.scoreUpdate').text(userScore);
-            alert("You win!");
-            gameActive = false;
+            delayButtonAlert = setTimeout (function() {
+                alert("You win!");
+            }, 100);
+            (gameActive = false);
             resetFunction();
         }
         //if userNum > goalNum, then lose
         else if (userScore > goalNum) {
+            delayButtonAlert = setTimeout (function() {
             alert("You lose!!");
+            }, 100);
             gameActive = false;
             resetFunction();
             }
